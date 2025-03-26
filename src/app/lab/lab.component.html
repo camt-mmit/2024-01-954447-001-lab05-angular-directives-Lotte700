@@ -1,0 +1,40 @@
+<!-- Button to Add a Section -->
+<button type="button" class="app-cmd-add-section" (click)="addSection()">Add Section</button>
+
+<!-- Sections List -->
+<div class="app-sections-list">
+  <div *ngFor="let section of sections; let i = index" class="app-cmp-section">
+
+    <div>
+      <button type="button" class="app-cmd-add-input" (click)="addInput(i)">
+        <i class="material-symbols-outlined"></i> Add Input
+      </button>
+      <b><span class="section-number">Section {{ i + 1 }}</span></b>
+      <button type="button" class="app-cmd-remove-section" (click)="removeSection(i)" [disabled]="sections.length === 1">
+        Remove Section
+      </button>
+    </div>
+
+    <!-- Inputs List -->
+    <div class="app-cmp-inputs-list">
+      <div *ngFor="let input of section.inputs; let inputIndex = index" class="app-cmp-input">
+        <label>
+          <b class="app-elem-title">Number <span class="app-elem-title-no">{{ inputIndex + 1 }}</span> :: </b>
+          <input type="number" [value]="input" (input)="updateInputValue(i, inputIndex, $event)" class="app-elem-input" />
+        </label>
+        <button type="button" class="app-cmd-remove-input" (click)="removeInput(i, inputIndex)" [disabled]="section.inputs.length === 1">
+          X
+        </button>
+      </div>
+    </div>
+
+    <!-- Result Display -->
+    <div>
+      <label>
+        <b>Result ::</b>
+        <output class="app-elem-result">{{ getSectionTotal(i) }}</output>
+      </label>
+    </div>
+
+  </div>
+</div>

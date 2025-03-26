@@ -1,0 +1,106 @@
+// Base Styles
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Layout
+.app-sections-list {
+  display: flex;
+  
+  gap: 16px;
+  margin-top: 16px;
+}
+
+// Section Container
+.app-cmp-section {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// ปุ่ม "Add Input" อยู่บนสุดของอินพุต
+.app-cmp-inputs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-cmd-add-input {
+  background: #007bff;
+  color: white;
+  width: 100%; // ปรับให้ปุ่มเต็มความกว้าง
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+// ปุ่มอื่นๆ
+.app-cmd-add-section {
+  background: #28a745;
+  color: white;
+}
+
+.app-cmd-remove-section {
+  background: #dc3545;
+  color: white;
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.app-cmd-remove-input {
+  background: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+// Input Styling
+.app-cmp-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+  background: white;
+}
+
+.app-elem-input {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+// Title and Result Display
+.app-elem-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.app-elem-title-no {
+  color: #007bff;
+}
+
+.app-elem-result {
+  font-weight: bold;
+  color: #28a745;
+  margin-left: 8px;
+}
